@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mindbody.assessment.view_model.BaseViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_some_thing_went_wrong"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_error_padding"
+        android:visibility="@{viewModel.errorVisibilityMutableLiveData}">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_no_data"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guide_horizontal_center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9"
+            app:srcCompat="@drawable/ic_some_thing_went_wrong" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_horizontal_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_message"
+            style="@style/TextViewLargeDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_error_message_top_margin"
+            android:gravity="center"
+            android:text="@string/some_thing_went_wrong_msg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/iv_no_data"
+            app:layout_constraintStart_toStartOf="@+id/iv_no_data"
+            app:layout_constraintTop_toBottomOf="@id/guide_horizontal_center"
+            app:layout_constraintVertical_bias="0" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTryAgain"
+            style="@style/CustomCapsuleButtonFilled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/btn_try_again_bottom_margin"
+            android:onClick="@{viewModel::tryAgain}"
+            android:text="@string/try_again"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_message"
+            app:layout_constraintStart_toStartOf="@+id/tv_message" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

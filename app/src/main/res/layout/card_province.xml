@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="provinceModel"
+            type="com.mindbody.assessment.models.ProvinceModel" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_margin"
+            android:padding="@dimen/item_content_padding">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_province_name"
+                style="@style/TextViewTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{provinceModel.name}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Maharashtra" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_country_detail"
+                style="@style/TextViewValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_two_labels"
+                android:text="@{provinceModel.code}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_province_name"
+                app:layout_constraintStart_toStartOf="@id/tv_province_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_province_name"
+                tools:text="MH" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Mindbody Assessment</string>
+
+    <string name="try_again">Try Again</string>
+    <string name="no_countries">Oo..No Countries</string>
+    <string name="no_province">No province available for the selected country</string>
+    <string name="no_internet_message_msg">Oops! No Internet. Please check your network connection</string>
+    <string name="some_thing_went_wrong_msg">Oh Snap! Looks like something went wrong, while processing your request</string>
+
+    <string name="countries">Countries</string>
+    <string name="provinces">Provinces</string>
+    <string name="select_a_country">Select a country</string>
+
+</resources>

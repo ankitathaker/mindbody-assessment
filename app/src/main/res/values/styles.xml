@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MyApp">
+        <item name="android:windowBackground">@color/colorApplicationBackground</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- START Font Style-->
+    <style name="AppTheme.Font">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppTheme.Font.Regular">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppTheme.Font.Medium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppTheme.Font.Bold">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <!-- END Font Style-->
+
+    <style name="TextViewTitle">
+        <item name="android:textAppearance">@style/AppTheme.Font.Medium</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="TextViewLabelTitle">
+        <item name="android:textAppearance">@style/AppTheme.Font.Bold</item>
+        <item name="android:textSize">@dimen/text_size_of_label_title</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="TextViewValue">
+        <item name="android:textAppearance">@style/AppTheme.Font</item>
+        <item name="android:textSize">@dimen/text_size_of_value</item>
+        <item name="android:textColor">@color/colorValue</item>
+    </style>
+
+    <style name="TextViewLargeDescription">
+        <item name="android:textAppearance">@style/AppTheme.Font.Regular</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!--toolbar style -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/colorToolbarText</item>
+    </style>
+
+
+    <style name="customCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/colorCardBackground</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="contentPadding">@dimen/card_content_padding</item>
+    </style>
+
+    <style name="CustomCapsuleButtonFilled">
+        <item name="android:backgroundTint">@color/colorFilledButton</item>
+        <item name="android:gravity">center</item>
+        <item name="cornerRadius">@dimen/btn_corner_radius</item>
+        <item name="android:textColor">@color/colorButtonText</item>
+        <item name="android:textAppearance">@style/AppTheme.Font.Regular</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>

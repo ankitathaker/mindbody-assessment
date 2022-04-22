@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#121212</color>
+    <color name="colorPrimaryDark">#121212</color>
+    <color name="colorAccent">#121212</color>
+    <color name="colorText">#fafafa</color>
+    <color name="colorToolbarDashboardText">#ffffff</color>
+    <color name="colorApplicationBackground">#121212</color>
+    <color name="colorCardBackground">#222222</color>
+    <color name="colorFilledButton">#9c404a</color>
+    <color name="colorValue">#C7C6C6</color>
+</resources>

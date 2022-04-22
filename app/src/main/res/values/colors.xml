@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#9c404a</color>
+    <color name="colorPrimaryDark">#9c404a</color>
+    <color name="colorAccent">#F2F2F2</color>
+    <color name="colorText">#343434</color>
+    <color name="colorToolbarText">#ffffff</color>
+    <color name="colorApplicationBackground">#f2f0fa</color>
+    <color name="colorCardBackground">#ffffff</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorFilledButton">#9c404a</color>
+    <color name="colorButtonText">#ffffff</color>
+    <color name="colorValue">#363636</color>
+
+</resources>

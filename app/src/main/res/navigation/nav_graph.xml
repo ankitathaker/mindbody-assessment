@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/countryListFragment">
+    <fragment
+        android:id="@+id/countryListFragment"
+        android:name="com.mindbody.assessment.ui.fragments.CountryListFragment"
+        android:label="@string/countries"
+        tools:layout="@layout/fragment_country_list">
+        <action
+            android:id="@+id/action_countryListFragment_to_provinceListFragment"
+            app:destination="@id/provinceListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/provinceListFragment"
+        android:name="com.mindbody.assessment.ui.fragments.ProvinceListFragment"
+        android:label="@string/provinces"
+        tools:layout="@layout/fragment_province_list">
+        <argument
+            android:name="countryModel"
+            app:argType="com.mindbody.assessment.models.CountryModel" />
+    </fragment>
+</navigation>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="provinceViewModel"
+            type="com.mindbody.assessment.view_model.ProvinceViewModel" />
+
+        <variable
+            name="countryModel"
+            type="com.mindbody.assessment.models.CountryModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.ProvinceFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_country_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/customCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_country_flag"
+                    android:layout_width="@dimen/country_flag_width"
+                    android:layout_height="@dimen/country_flag_height"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_country_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_country_detail"
+                    tools:src="@mipmap/ic_launcher" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_country_detail"
+                    style="@style/TextViewTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{countryModel.name}"
+                    android:layout_marginStart="@dimen/margin_between_image_and_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_country_flag"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="India" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_country_code"
+                    style="@style/TextViewValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_between_two_labels"
+                    android:text="@{countryModel.code}"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_country_detail"
+                    app:layout_constraintStart_toStartOf="@id/tv_country_detail"
+                    app:layout_constraintTop_toBottomOf="@id/tv_country_detail"
+                    tools:text="MH" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_province"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/recycler_view_margin"
+            android:visibility="@{provinceViewModel.contentVisibilityLiveData}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/cv_country_detail"
+            app:layout_constraintStart_toStartOf="@+id/cv_country_detail"
+            app:layout_constraintTop_toBottomOf="@+id/cv_country_detail"
+            tools:listitem="@layout/card_province" />
+
+        <ProgressBar
+            android:id="@+id/pb_province"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="@{provinceViewModel.loaderVisibility}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <include
+            android:id="@+id/no_internet_connection"
+            layout="@layout/no_internet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cv_country_detail"
+            app:layout_constraintStart_toStartOf="@+id/cv_country_detail"
+            app:layout_constraintTop_toBottomOf="@+id/cv_country_detail" />
+
+        <include
+            android:id="@+id/no_data_found"
+            layout="@layout/no_data"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cv_country_detail"
+            app:layout_constraintStart_toStartOf="@+id/cv_country_detail"
+            app:layout_constraintTop_toBottomOf="@+id/cv_country_detail" />
+
+        <include
+            android:id="@+id/something_went_wrong"
+            layout="@layout/something_went_wrong"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cv_country_detail"
+            app:layout_constraintStart_toStartOf="@+id/cv_country_detail"
+            app:layout_constraintTop_toBottomOf="@+id/cv_country_detail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
